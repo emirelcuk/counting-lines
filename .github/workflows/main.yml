@@ -6,6 +6,7 @@ jobs:
     name: A job to say hello
     steps:
       - uses: actions/checkout@v4
+      - uses: ./
       - id: foo
         uses: actions/count-action@v0.0.1
         with:
