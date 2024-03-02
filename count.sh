@@ -1,3 +1,3 @@
-echo "Counting lines of code..."
+echo 'Counting lines of code...'
 pwd
-echo "111 lines"
+echo '111 lines'
