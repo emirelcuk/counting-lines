@@ -1,9 +1,9 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  lines_counter_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to count lines of code
     steps:
       - uses: actions/checkout@v4
       - id: counting
