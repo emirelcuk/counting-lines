@@ -1,4 +1,4 @@
-name: 'Counter'
+name: 'Code Lines Counter'
 description: 'Count lines of code'
 inputs:
   who-to-greet:  # id of input
