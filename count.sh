@@ -26,7 +26,7 @@ while read -r FILE; do
 done < <(find . -type f -regextype posix-egrep -regex "$1" ! -regex "$2")
 echo "Lines of Code: $total"
 
-mkdir -p .github/workflows/badges
+mkdir ./output
 pip install anybadge
-anybadge -l "Lines of Code" -v "$total" -f .github/workflows/badges/total-lines.svg -c royalblue
+anybadge -l "Lines of Code" -v "$total" -f ./output/total-lines.svg -c royalblue
 cat .github/workflows/badges/total-lines.svg
