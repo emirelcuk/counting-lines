@@ -46,7 +46,7 @@ jobs:
       - id: counting
         uses: ./                   # write the action name instead
         with:
-          include-files: '.*\.sh'  # default value - include all files
+          include-files: '.*\**'  # default value - include all files
           exclude-files: ''        # default value - exclude no files
 ```
 
