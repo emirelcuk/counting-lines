@@ -6,11 +6,11 @@ jobs:
     name: A job to count lines of code
     steps:
       - uses: actions/checkout@v4
-      - id: counting
+      - id: counter
         uses: ./
         with:
           include-files: '.*\.sh'
-#      - run: echo random-number "$RANDOM_NUMBER"
-#        shell: bash
-#        env:
-#          RANDOM_NUMBER: ${{ steps.counting.outputs.random-number }}
+      - run: echo total-lines "$RANDOM_NUMBER"
+        shell: bash
+        env:
+          RANDOM_NUMBER: ${{ steps.counter.outputs.total-lines }}

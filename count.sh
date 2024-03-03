@@ -24,4 +24,4 @@ while read -r FILE; do
   count=$(grep -cve '^\s*$' < "$FILE");
   (( total+=count ));
 done < <(find . -type f -regextype posix-egrep -regex "$1" ! -regex "$2")
-echo "$total"
+echo "Line of Code: $total"

@@ -1,4 +1,5 @@
 # code-lines-counter-action
+![Generated Button](https://github.com/MikhailEpatko/code-lines-counter-action/image-data/total-lines.svg)
 
 GitHub action to count lines in the files excluding blank lines.
 
@@ -27,7 +28,7 @@ See: https://www.gnu.org/software/findutils/manual/html_node/find_html/posix_002
 
 ```./count.sh '.*\**' '.*\.sh'```
 
-## Examples of usage GitHub action
+## Example of usage GitHub action
 
 Copy the workflow code into a .github/workflows/main.yml file in your repository
 
