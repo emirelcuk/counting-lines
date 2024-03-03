@@ -25,11 +25,11 @@ runs:
       env:
         INCLUDE_FILES: ${{ inputs.include-files }}
         EXCLUDE_FILES: ${{ inputs.exclude-files }}
-
-    - name: Deploy to image-data branch
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        publish_dir: ./output
-        publish_branch: image-data
-        github_token: ${{ github.token }}
+#
+#    - name: Deploy to image-data branch
+#      uses: peaceiris/actions-gh-pages@v3
+#      with:
+#        publish_dir: ./output
+#        publish_branch: image-data
+#        github_token: ${{ github.token }}
 

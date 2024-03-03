@@ -28,5 +28,5 @@ echo "Lines of Code: $total"
 
 mkdir ./output
 pip install anybadge
-anybadge -l "Lines of Code" -v "$total" -f ./output/total-lines.svg -c royalblue
-cat ./output/total-lines.svg
+anybadge -l "Lines of Code" -v "$total" -f .github/workflows/badges/total-lines.svg -c royalblue
+cat .github/workflows/badges/total-lines.svg
