@@ -10,7 +10,3 @@ jobs:
         uses: ./
         with:
           include-files: '.*\.sh'
-      - run: echo total-lines "$RANDOM_NUMBER"
-        shell: bash
-        env:
-          RANDOM_NUMBER: ${{ steps.counter.outputs.total-lines }}

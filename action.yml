@@ -16,35 +16,15 @@ outputs:
 runs:
   using: "composite"
   steps:
-#    - name: Random Number Generator
-#      id: random-number-generator
-#      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
-#      shell: bash
-#
-#    - name: Set GitHub Path
-#      run: echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
-#      shell: bash
-#      env:
-#        GITHUB_ACTION_PATH: ${{ github.action_path }}
 
     - name: Count lines of code
       id: counter
 #      run: count.sh $INCLUDE_FILES $EXCLUDE_FILES
-      run: echo "total-lines=$($GITHUB_ACTION_PATH/count.sh $INCLUDE_FILES $EXCLUDE_FILES)" >> $GITHUB_OUTPUT
+      run: $GITHUB_ACTION_PATH/count.sh $INCLUDE_FILES $EXCLUDE_FILES
       shell: bash
       env:
         INCLUDE_FILES: ${{ inputs.include-files }}
         EXCLUDE_FILES: ${{ inputs.exclude-files }}
-
-    - name: Display the path
-      shell: bash
-      run: |
-        mkdir ./output
-        pip install anybadge
-        anybadge -l "Lines of Code" -v "$steps.counter.outputs.total-lines" -f ./output/total-lines.svg -c green
-        cat ./output/total-lines.svg
-#        import os
-#        print(os.environ['PATH'])
 
     - name: Deploy to image-data branch
       uses: peaceiris/actions-gh-pages@v3
@@ -52,5 +32,4 @@ runs:
         publish_dir: ./output
         publish_branch: image-data
         github_token: ${{ github.token }}
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
+

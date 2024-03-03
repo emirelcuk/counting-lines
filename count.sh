@@ -24,4 +24,9 @@ while read -r FILE; do
   count=$(grep -cve '^\s*$' < "$FILE");
   (( total+=count ));
 done < <(find . -type f -regextype posix-egrep -regex "$1" ! -regex "$2")
-echo "Line of Code: $total"
+echo "Lines of Code: $total"
+
+mkdir ./output
+pip install anybadge
+anybadge -l "Lines of Code" -v "$total" -f ./output/total-lines.svg -c royalblue
+cat ./output/total-lines.svg
