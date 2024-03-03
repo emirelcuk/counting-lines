@@ -1,5 +1,5 @@
 # code-lines-counter-action
-![Generated Button](https://github.com/MikhailEpatko/code-lines-counter-action/tree/main/.github/workflows/badges/total-lines.svg)
+![Generated Button](https://github.com/MikhailEpatko/code-lines-counter-action/blob/image-data/total-lines.svg)
 
 GitHub action to count lines in the files excluding blank lines.
 
