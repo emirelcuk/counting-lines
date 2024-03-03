@@ -9,10 +9,6 @@ inputs:
     description: 'Do not count lines in files (posix-egrep regex)'
     required: true
     default: ''
-outputs:
-  total-lines:
-    description: "Total lines of code"
-    value: ${{ steps.counter.outputs.total-lines }}
 runs:
   using: "composite"
   steps:

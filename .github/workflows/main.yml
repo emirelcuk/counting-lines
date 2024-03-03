@@ -9,4 +9,5 @@ jobs:
       - id: counter
         uses: ./
         with:
-          include-files: '.*\.sh'
+          include-files: '.*\**'
+          exclude-files: ''

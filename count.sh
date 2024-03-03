@@ -29,4 +29,3 @@ echo "Lines of Code: $total"
 mkdir ./output
 pip install anybadge
 anybadge -l "Lines of Code" -v "$total" -f ./output/total-lines.svg -c royalblue
-cat ./output/total-lines.svg
