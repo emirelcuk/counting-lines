@@ -1,5 +1,5 @@
-name: 'Code Lines Counter'
-description: 'Count lines of code'
+name: 'Bage: Code Lines Counter'
+description: 'Count lines of code and create a badge for display result'
 inputs:
   include-files:
     description: 'Count lines in files (posix-egrep regex)'
