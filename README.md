@@ -30,7 +30,9 @@ See: https://www.gnu.org/software/findutils/manual/html_node/find_html/posix_002
 
 ## Example of usage GitHub action
 
-Copy the workflow code into a .github/workflows/main.yml file in your repository
+In this version, you use [posix-egrep](https://www.gnu.org/software/findutils/manual/html_node/find_html/posix_002degrep-regular-expression-syntax.html) to pass a regular expression to the action to exclude or include file lines counts.
+In next releases it will be simplified. 
+To install action copy the workflow code into a .github/workflows/main.yml file in your repository
 
 ```
 on: [push]
@@ -38,11 +40,15 @@ on: [push]
 jobs:
   lines_counter_job:
     runs-on: ubuntu-latest
-    name: A job to count lines of code
+    name: A job to count lines of code and generate badge
     steps:
       - uses: actions/checkout@v4
       - id: counting
-        uses: ./
+        uses: ./                   # write the action name instead
         with:
-          include-files: '.*\.sh'
+          include-files: '.*\.sh'  # default value - include all files
+          exclude-files: ''        # default value - exclude no files
 ```
+
+See above for more regex examples.
+The badge will be generated in image-data branche of your repository. For this you need to configure [Setting the permissions of the GITHUB_TOKEN for your repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository).
