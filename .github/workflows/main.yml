@@ -11,3 +11,9 @@ jobs:
         with:
           include-files: '.*\**'
           exclude-files: ''
+      - name: Deploy badge to image-data branch
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          publish_dir: ./output
+          publish_branch: image-data
+          github_token: ${{ github.token }}

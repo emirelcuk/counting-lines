@@ -12,20 +12,13 @@ inputs:
 runs:
   using: "composite"
   steps:
-
-    - name: Count lines of code
+    - name: Count lines of code and generate badge
       id: counter
-#      run: count.sh $INCLUDE_FILES $EXCLUDE_FILES
-      run: $GITHUB_ACTION_PATH/count.sh $INCLUDE_FILES $EXCLUDE_FILES
+      run: |
+        mkdir ./output
+        pip install anybadge
+        $GITHUB_ACTION_PATH/generate-badge.sh $INCLUDE_FILES $EXCLUDE_FILES
       shell: bash
       env:
         INCLUDE_FILES: ${{ inputs.include-files }}
         EXCLUDE_FILES: ${{ inputs.exclude-files }}
-
-    - name: Deploy to image-data branch
-      uses: peaceiris/actions-gh-pages@v3.9.3
-      with:
-        publish_dir: ./output
-        publish_branch: image-data
-        github_token: ${{ github.token }}
-

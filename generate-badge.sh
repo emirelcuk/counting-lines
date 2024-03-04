@@ -8,16 +8,16 @@
 #
 #  EXAMPLES OF USAGE:
 #    - count in all files:
-#      ./count.sh '.*\**' ''
+#      ./generate-badge.sh '.*\**' ''
 #
 #    - count in kotlin source files (*.kt):
-#      ./count.sh '.*\.kt' ''
+#      ./generate-badge.sh '.*\.kt' ''
 #
 #    - count in kotlin and bash script files (*.kt, *.sh):
-#      ./count.sh '.*\.(kt|sh)$' ''
+#      ./generate-badge.sh '.*\.(kt|sh)$' ''
 #
 #    - count in all files excluding bash script files (*.sh):
-#      ./count.sh '.*\**' '.*\.sh'
+#      ./generate-badge.sh '.*\**' '.*\.sh'
 # ---------------------------------------------
 total=0
 while read -r FILE; do
@@ -26,6 +26,4 @@ while read -r FILE; do
 done < <(find . -type f -regextype posix-egrep -regex "$1" ! -regex "$2")
 echo "Lines of Code: $total"
 
-mkdir ./output
-pip install anybadge
 anybadge -l "Lines of Code" -v "$total" -f ./output/total-lines.svg -c royalblue

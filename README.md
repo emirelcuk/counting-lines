@@ -5,7 +5,7 @@ GitHub action to count lines in the files excluding blank lines.
 
 ## Examples of usage bash script
 
-```./count.sh @1 @2```
+```./generate-badge.sh @1 @2```
 
     @1 = files to include (posix-egrep regex)
     @2 = files to exclude (posix-egrep regex)
@@ -14,24 +14,26 @@ See: https://www.gnu.org/software/findutils/manual/html_node/find_html/posix_002
 
 ### Count lines in all files:
 
-```./count.sh '.*\**' ''```
+```./generate-badge.sh '.*\**' ''```
 
 ### Count lines in kotlin source files (*.kt):
 
-```./count.sh '.*\.kt' ''```
+```./generate-badge.sh '.*\.kt' ''```
 
 ### Count lines in kotlin and bash script files (*.kt, *.sh):
 
-```./count.sh '.*\.(kt|sh)$' ''```
+```./generate-badge.sh '.*\.(kt|sh)$' ''```
 
 ### Count lines in all files excluding bash script files (*.sh):
 
-```./count.sh '.*\**' '.*\.sh'```
+```./generate-badge.sh '.*\**' '.*\.sh'```
 
 ## Example of usage GitHub action
 
 In this version, you use [posix-egrep](https://www.gnu.org/software/findutils/manual/html_node/find_html/posix_002degrep-regular-expression-syntax.html) to pass a regular expression to the action to exclude or include file lines counts.
+
 In next releases it will be simplified. 
+
 To install action copy the workflow code into a .github/workflows/main.yml file in your repository
 
 ```
@@ -51,4 +53,5 @@ jobs:
 ```
 
 See above for more regex examples.
-The badge will be generated in image-data branche of your repository. For this you need to configure [Setting the permissions of the GITHUB_TOKEN for your repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository).
+
+The badge will be generated into ./output/total-lines.svg file. Use whatever tool you prefer to upload it somewhere.
