@@ -1,4 +1,4 @@
-# code-lines-counter-action
+# loc-badge-action
 ![Generated Button](https://github.com/MikhailEpatko/code-lines-counter-action/blob/image-data/total-lines.svg)
 
 GitHub action to count lines in the files excluding blank lines.
