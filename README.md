@@ -1,29 +1,32 @@
 # loc-badge-action
+
 ![Generated Button](https://github.com/MikhailEpatko/code-lines-counter-action/blob/image-data/loc-badge.svg)
 
 GitHub action to count lines in the files excluding blank lines.
 
 ## Examples of posix-egrep regex
 
-See: https://www.gnu.org/software/findutils/manual/html_node/find_html/posix_002degrep-regular-expression-syntax.html
+See <https://www.gnu.org/software/findutils/manual/html_node/find_html/posix_002degrep-regular-expression-syntax.html>
 
-### Count lines in all files:
+### Count lines in all files
 
 ```'.*\**'```
 
-### Count lines in kotlin source files (*.kt):
+### Count lines in kotlin source files (*.kt)
 
 ```'.*\.kt'```
 
-### Count lines in kotlin and bash script files (*.kt, *.sh):
+### Count lines in kotlin and bash script files (*.kt, *.sh)
 
 ```'.*\.(kt|sh)$'```
 
 ## Example of usage GitHub action
 
-In this version, you use [posix-egrep](https://www.gnu.org/software/findutils/manual/html_node/find_html/posix_002degrep-regular-expression-syntax.html) to pass a regular expression to the action to exclude or include file lines counts.
+In this version, you use [posix-egrep](https://www.gnu.org/software/findutils/manual/html_node/find_html/posix_002degrep-regular-expression-syntax.html)
+ to pass a regular expression to the action to exclude or include file lines counts.
 
-To install action copy the workflow code into a .github/workflows/main.yml file in your repository
+To install action copy the workflow code into
+ a .github/workflows/main.yml file in your repository
 
 ```yaml
 on: [push]
@@ -64,7 +67,7 @@ jobs:
           #  G - up to billions
           # Default value: I
           rounding: I
-          # Available colors: https://pypi.org/project/anybadge/
+          # Available colors: <https://pypi.org/project/anybadge/>
           # Default value: green
           color: green
 
