@@ -49,6 +49,11 @@ if [ "$ScanDirs" ]; then
   done
 fi
 
+echo "${ScanDirectories[@]}"
+echo "${ExcludeDirectories[@]}"
+
+ls -a
+
 Count=0
 while read -r FILE; do
   lines=$(grep -cve '^\s*$' < "$FILE");
