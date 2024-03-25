@@ -2,13 +2,38 @@ name: 'Bage: Code Lines Count'
 description: 'Count lines of code and create a badge for display result'
 inputs:
   include-files:
-    description: 'Count lines in files (posix-egrep regex)'
+    description: 'Count lines in files (posix-egrep regex). Default: all files'
     required: true
     default: '.*\**'
   exclude-files:
-    description: 'Do not count lines in files (posix-egrep regex)'
+    description: 'Do not count lines in files (posix-egrep regex). Default: none'
     required: true
     default: ''
+  scan-directories:
+    description: 'Directories to scan. Default: current directory'
+    required: false
+    default: '.'
+  exclude-directories:
+    description: 'Do not count lines in directories. Default: none'
+    required: true
+    default: ''
+  output-directory:
+    description: 'Output directory. Default: output'
+    required: false
+    default: 'output'
+  output-filename:
+    description: 'Output filename. Default: loc-badge.svg'
+    required: false
+    default: 'loc-badge.svg'
+  rounding:
+    description: 'Rounding mode. Default: I'
+    required: false
+    default: 'I'
+  color:
+    description: 'Background color. Default: green'
+    required: false
+    default: 'green'
+
 runs:
   using: "composite"
   steps:
@@ -17,8 +42,22 @@ runs:
       run: |
         mkdir ./output
         pip install anybadge
-        $GITHUB_ACTION_PATH/generate-badge.sh $INCLUDE_FILES $EXCLUDE_FILES
+        $GITHUB_ACTION_PATH/generate-badge.sh \
+        -c "$COLOR" \
+        -e "EXCLUDE_DIRS" \
+        -f "$FILENAME" \
+        -i "$INCLUDE_FILES" \
+        -o "$OUTPUT_DIR" \
+        -r "$ROUNDING" \
+        -s "$SCAN_DIRS" \
+        -x "$EXCLUDE_FILES"
       shell: bash
       env:
-        INCLUDE_FILES: ${{ inputs.include-files }}
+        COLOR:         ${{ inputs.color }}
+        SCAN_DIRS:     ${{ inputs.scan-directories }}
+        EXCLUDE_DIRS:  ${{ inputs.exclude-directories }}
         EXCLUDE_FILES: ${{ inputs.exclude-files }}
+        FILENAME:      ${{ inputs.output-filename }}
+        INCLUDE_FILES: ${{ inputs.include-files }}
+        OUTPUT_DIR:    ${{ inputs.output-directory }}
+        ROUNDING:      ${{ inputs.rounding }}
