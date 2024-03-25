@@ -67,17 +67,11 @@ done < <(find "${ScanDirectories[@]}" \
 
 echo "Lines of Code: $Count"
 
-pwd
-ls -a
-
-
 if   [ "$Rounding" == "K" ]; then Count="$(python -c "print(round($Count/1000, 1))")K"
 elif [ "$Rounding" == "M" ]; then Count="$(python -c "print(round($Count/1000000, 1))")M"
 elif [ "$Rounding" == "G" ]; then Count="$(python -c "print(round($Count/1000000000, 1))")G"
 else Count=$(python -c "print(format($Count, ',d'))")
 fi
-
-echo "Lines of code: $Count"
 
 mkdir -p "$OutDir"
 
