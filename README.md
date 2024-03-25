@@ -41,17 +41,13 @@ jobs:
       - id: counting
         uses: ./                   # write the action name instead
         with:
-          # Count lines in files (posix-egrep regex). Default: all files
-          include-files: '.*\**'
-          # Do not count lines in files (posix-egrep regex). Default: exclude no files
-          exclude-files: ''
           # Directories to scan. Default: current directory
           # For this option we can use multiline strings if we want to pass multiple values.
           # In this case it's an important detail that we used '|' or '|-' in the YAML. 
           scan-directories: |
             src
             .github
-          # Do not count lines in files of thees directories. Default: none
+          # Do not count lines in files of thees directories. Default: .git
           # For this option we can use multiline strings if we want to pass multiple values.
           # In this case it's an important detail that we used '|' or '|-' in the YAML. 
           exclude-directories: |
