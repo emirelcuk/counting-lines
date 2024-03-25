@@ -5,22 +5,6 @@
 
 GitHub action to count lines in the files excluding blank lines.
 
-## Examples of posix-egrep regex
-
-See <https://www.gnu.org/software/findutils/manual/html_node/find_html/posix_002degrep-regular-expression-syntax.html>
-
-### Count lines in all files
-
-```'.*\**'```
-
-### Count lines in kotlin source files
-
-```'.*\.kt'```
-
-### Count lines in kotlin and bash script files
-
-```'.*\.(kt|sh)$'```
-
 ## Example of usage GitHub action
 
 In this version, you use [posix-egrep](https://www.gnu.org/software/findutils/manual/html_node/find_html/posix_002degrep-regular-expression-syntax.html)
