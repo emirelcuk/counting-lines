@@ -9,7 +9,7 @@ jobs:
       - id: counter
         uses: ./
         with:
-          include-files: '.*\**'
+          include-files: '.*\.(yml|sh|md)$'
           scan-directories: .
           output-directory: output
           output-filename: loc-badge.svg
