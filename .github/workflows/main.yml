@@ -13,7 +13,7 @@ jobs:
           scan-directories: .
           output-directory: output
           output-filename: loc-badge.svg
-          rounding: K
+          rounding: I
           color: green
       - name: Deploy badge to image-data branch
         uses: peaceiris/actions-gh-pages@v3.9.3
