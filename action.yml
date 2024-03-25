@@ -8,7 +8,7 @@ inputs:
   exclude-directories:
     description: 'Do not count lines in directories. Default: none'
     required: true
-    default: .git
+    default: '.git'
   output-directory:
     description: 'Output directory. Default: output'
     required: false
