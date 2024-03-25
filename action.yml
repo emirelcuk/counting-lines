@@ -36,7 +36,7 @@ runs:
         pip install anybadge
         $GITHUB_ACTION_PATH/generate-badge.sh \
         -c "$COLOR" \
-        -e "EXCLUDE_DIRS" \
+        -e "$EXCLUDE_DIRS" \
         -f "$FILENAME" \
         -o "$OUTPUT_DIR" \
         -r "$ROUNDING" \
