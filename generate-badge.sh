@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while getopts 'c:e:f:i:o:r:s:x:' opt; do
+while getopts 'c:e:f:o:r:s:' opt; do
   case "$opt" in
     c)
       Color="$OPTARG"
@@ -11,9 +11,6 @@ while getopts 'c:e:f:i:o:r:s:x:' opt; do
     f)
       Filename="$OPTARG"
       ;;
-    i)
-      IncludeFiles="$OPTARG"
-      ;;
     o)
       OutDir="$OPTARG"
       ;;
@@ -22,9 +19,6 @@ while getopts 'c:e:f:i:o:r:s:x:' opt; do
       ;;
     s)
       ScanDirs="$OPTARG"
-      ;;
-    x)
-      ExcludeFiles="$OPTARG"
       ;;
     :)
       echo "Usage: $(basename "$0") [-c Color] [-e ExcludeDirs] [-f Filename] [-i IncludeFiles] \
@@ -59,11 +53,7 @@ Count=0
 while read -r FILE; do
   lines=$(grep -cve '^\s*$' < "$FILE");
   (( Count+=lines ));
-done < <(find "${ScanDirectories[@]}" \
--type f \
--regextype posix-egrep \
--regex "$IncludeFiles" \
-! -regex "$ExcludeFiles" "${ExcludeDirectories[@]}")
+done < <(find "${ScanDirectories[@]}" -type f "${ExcludeDirectories[@]}")
 
 echo "Lines of Code: $Count"
 
