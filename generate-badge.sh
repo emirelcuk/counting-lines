@@ -98,4 +98,4 @@ echo "Lines of code: $Count"
 
 mkdir -p "$OutDir"
 
-anybadge -l "Hits of Code" -v "$Count" -f "$OutDir/$Filename" -o -c "$Color"
+anybadge -l "Lines of Code" -v "$Count" -f "$OutDir/$Filename" -o -c "$Color"

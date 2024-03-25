@@ -1,4 +1,4 @@
-name: 'Lines of Code Bage'
+name: 'Lines of Code Badge'
 description: 'Count lines of code and create a badge for display result'
 inputs:
   include-files:
