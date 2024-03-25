@@ -1,26 +1,5 @@
 #!/bin/bash
 
-
-# ---------------------------------------------
-#  Count lines in the files excluding blank lines
-#
-#  @1 = files to include (posix-egrep regex)
-#  @2 = files to exclude (posix-egrep regex)
-#
-#  EXAMPLES OF USAGE:
-#    - count in all files:
-#      ./generate-badge.sh '.*\**' ''
-#
-#    - count in kotlin source files (*.kt):
-#      ./generate-badge.sh '.*\.kt' ''
-#
-#    - count in kotlin and bash script files (*.kt, *.sh):
-#      ./generate-badge.sh '.*\.(kt|sh)$' ''
-#
-#    - count in all files excluding bash script files (*.sh):
-#      ./generate-badge.sh '.*\**' '.*\.sh'
-# ---------------------------------------------
-
 while getopts 'c:e:f:i:o:r:s:x:' opt; do
   case "$opt" in
     c)
