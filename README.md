@@ -1,6 +1,8 @@
 # loc-badge-action
 
-![Generated Button](https://github.com/MikhailEpatko/code-lines-counter-action/blob/image-data/loc-badge.svg)
+![Lines-of-Code Badge](https://github.com/MikhailEpatko/code-lines-counter-action/blob/image-data/loc-badge.svg)
+
+[//]: # (![Hits-of-Code Badge]&#40;https://github.com/MikhailEpatko/code-lines-counter-action/blob/image-data/hoc-badge.svg&#41;)
 
 GitHub action to count lines in the files excluding blank lines.
 

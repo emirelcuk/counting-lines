@@ -1,0 +1,22 @@
+name: HoC badge
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  hits_counter_job:
+    name: Generate and deploy HoC-badge
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: MikhailEpatko/hoc-badge-action@v3.2.0
+        with:
+          dir: .
+          since: 2000-01-01
+          output_dir: hoc-badge
+          rounding: I
+          color: green
+      - uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          publish_dir: ./hoc-badge
+          publish_branch: hoc-badge
+          github_token: ${{ github.token }}
