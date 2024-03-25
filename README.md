@@ -12,13 +12,11 @@ See <https://www.gnu.org/software/findutils/manual/html_node/find_html/posix_002
 
 ```'.*\**'```
 
-### Count lines in kotlin source files (*.kt)
+### Count lines in kotlin source files
 
 ```'.*\.kt'```
 
-### Count lines in kotlin and bash script files 
-
-*.kt, *.sh
+### Count lines in kotlin and bash script files
 
 ```'.*\.(kt|sh)$'```
 
