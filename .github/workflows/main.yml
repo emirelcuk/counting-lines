@@ -9,12 +9,13 @@ jobs:
       - id: counter
         uses: ./
         with:
-          include-files: '.*\.(yml|sh|md)$'
+#          include-files: '.*\.(yml|sh|md)$'
           scan-directories: .
           output-directory: output
           output-filename: loc-badge.svg
           rounding: I
           color: green
+          exclude-directories: .git
       - name: Deploy badge to image-data branch
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
