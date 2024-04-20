@@ -54,8 +54,4 @@ jobs:
 
 ```
 
-See above for more regex examples.
-
-The badge will be generated into ./output/total-lines.svg file by default.
-
 Use whatever tool you prefer to upload it somewhere.
